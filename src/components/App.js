@@ -1,6 +1,5 @@
-import React, {Component, useState} from "react";
+import React, { Component, useState } from "react";
 import '../styles/App.css';
-import Singup from './SignupForm';
 
 const App = () => {
   const [values,setValues] = useState({
@@ -10,7 +9,6 @@ const App = () => {
     phonenumber: "",
     password: "",
   });
-
   const [submitted,setSubmitted] = useState(false);
   const [valid,setValid] = useState(false);
 
@@ -33,6 +31,7 @@ const App = () => {
   const handlePasswordInputChange = (event) => {
     setValues({...values,password: event.target.value});
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if(values.name && values.email  && values.phonenumber && values.password && values.password.length > 5 && values.email.includes("@") && isNaN(values.name))
@@ -78,6 +77,5 @@ const App = () => {
     </div>
   )
 }
-
 
 export default App;
